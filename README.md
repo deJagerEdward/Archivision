@@ -28,7 +28,7 @@ Paste an Anthropic API key into the sidebar (create one at https://console.anthr
 
 ## Demo mode
 
-With no API key saved, the app opens in **demo mode**: it loads a bundled sample sketch and, on Develop Concept, runs the same sequential pipeline with hand-built SVG stand-ins for the seven diagrams (2.5–4s each, plus one simulated 429 on the exploded axonometric on every other run, so the retry path is visible). No network calls are made. Toggle it off in the sidebar to use a real Anthropic key.
+The app opens in live mode, ready for your Anthropic key. Switch on **demo mode** in the sidebar to try it offline: on Develop Concept it runs the same sequential pipeline with hand-built SVG stand-ins for the seven diagrams (2.5–4s each, plus one simulated 429 on the exploded axonometric on every other run, so the retry path is visible). No network calls are made. "Use the sample sketch" loads a bundled sketch in either mode.
 
 ## Deploy
 

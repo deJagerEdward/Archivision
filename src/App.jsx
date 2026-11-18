@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, Square, KeyRound, Eye, EyeOff, Download, Layers, ArrowUpRight, FlaskConical, PenLine } from 'lucide-react';
 import { generateDemoDiagram, loadSampleSketch } from './lib/demo.js';
@@ -40,13 +40,8 @@ export default function App() {
   const [lightboxId, setLightboxId] = useState(null);
   const abortRef = useRef(null);
   const runIdRef = useRef(0);
-  const [demoMode, setDemoMode] = useState(() => !loadKey());
-
-  // In demo mode, start with the bundled sample sketch so the flow can be tried in one click.
-  useEffect(() => {
-    if (demoMode && !image) useSample();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // Live mode (real Claude calls with your key) is the default; demo mode is an opt-in switch.
+  const [demoMode, setDemoMode] = useState(false);
 
   async function useSample() {
     try {
